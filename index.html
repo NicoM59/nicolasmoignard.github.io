@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Data Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .google-shadow {
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+        }
+        
+        .google-hover {
+            transition: all 0.2s ease;
+        }
+        
+        .google-hover:hover {
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white google-shadow sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold text-gray-900">Portfolio</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#accueil" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Accueil</a>
+                        <a href="#apropos" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">À propos</a>
+                        <a href="#projets" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Projets</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#accueil" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Accueil</a>
+                <a href="#apropos" class="block px-3 py-2 text-gray-700 hover:text-blue-600">À propos</a>
+                <a href="#projets" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Projets</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="text-center px-4 section-fade">
+            <div class="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold google-shadow">
+                DS
+            </div>
+            <h1 class="text-5xl md:text-6xl font-light text-gray-900 mb-4">
+                Votre <span class="font-semibold text-blue-600">Nom</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Data Scientist en reconversion • Passionné par l'analyse de données et l'intelligence artificielle
+            </p>
+            <div class="space-x-4">
+                <button onclick="scrollToSection('projets')" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors google-shadow google-hover">
+                    Voir mes projets
+                </button>
+                <button onclick="scrollToSection('contact')" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:border-gray-400 transition-colors google-shadow google-hover">
+                    Me contacter
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 section-fade">
+            <h2 class="text-4xl font-light text-center text-gray-900 mb-16">À propos de moi</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-medium text-gray-900 mb-6">Mon parcours de reconversion</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Après plusieurs années dans [votre domaine précédent], j'ai décidé de me reconvertir dans la data science, 
+                        un domaine qui combine ma passion pour les mathématiques, la technologie et la résolution de problèmes complexes.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Cette transition m'a permis d'acquérir de solides compétences en analyse de données, machine learning 
+                        et visualisation, tout en apportant une perspective unique grâce à mon expérience antérieure.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Analytique</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Créatif</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Rigoureux</span>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Curieux</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl google-shadow">
+                    <h4 class="text-lg font-medium text-gray-900 mb-4">Formation & Certifications</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                            <div>
+                                <p class="font-medium text-gray-900">Formation Data Science</p>
+                                <p class="text-sm text-gray-600">École/Organisme • 2023-2024</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                            <div>
+                                <p class="font-medium text-gray-900">Certification Python</p>
+                                <p class="text-sm text-gray-600">Plateforme • 2023</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
+                            <div>
+                                <p class="font-medium text-gray-900">Formation précédente</p>
+                                <p class="text-sm text-gray-600">Institution • Année</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projets" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 section-fade">
+            <h2 class="text-4xl font-light text-center text-gray-900 mb-16">Mes Projets</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projet 1 -->
+                <div class="bg-white rounded-2xl p-6 google-shadow google-hover">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        📊
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Analyse Prédictive</h3>
+                    <p class="text-gray-600 mb-4">
+                        Développement d'un modèle de machine learning pour prédire [objectif]. 
+                        Utilisation de Python, Pandas et Scikit-learn.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Python</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Pandas</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">ML</span>
+                    </div>
+                    <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                        Voir le projet →
+                    </button>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="bg-white rounded-2xl p-6 google-shadow google-hover">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        📈
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Dashboard Interactif</h3>
+                    <p class="text-gray-600 mb-4">
+                        Création d'un tableau de bord interactif avec Streamlit pour visualiser 
+                        des données de [domaine] en temps réel.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Streamlit</span>
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Plotly</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">SQL</span>
+                    </div>
+                    <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                        Voir le projet →
+                    </button>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="bg-white rounded-2xl p-6 google-shadow google-hover">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        🤖
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">NLP & Classification</h3>
+                    <p class="text-gray-600 mb-4">
+                        Projet de traitement du langage naturel pour classifier automatiquement 
+                        des textes selon différentes catégories.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">NLP</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">NLTK</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">TensorFlow</span>
+                    </div>
+                    <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                        Voir le projet →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 section-fade">
+            <h2 class="text-4xl font-light text-center text-gray-900 mb-16">Contactez-moi</h2>
+            <div class="bg-white rounded-2xl p-8 google-shadow">
+                <p class="text-center text-gray-600 mb-8">
+                    Intéressé par mon profil ? N'hésitez pas à me contacter pour discuter d'opportunités ou de collaborations.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-lg">
+                        <span class="text-2xl">📧</span>
+                        <span class="text-gray-700">votre.email@exemple.com</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-lg">
+                        <span class="text-2xl">💼</span>
+                        <span class="text-gray-700">LinkedIn: /in/votre-profil</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-lg">
+                        <span class="text-2xl">🐙</span>
+                        <span class="text-gray-700">GitHub: /votre-username</span>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors google-shadow google-hover">
+                        Télécharger mon CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2024 Votre Nom. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Fermer le menu mobile si ouvert
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialiser la première section comme visible
+        document.querySelector('.section-fade').classList.add('visible');
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974b6eac61a52a65',t:'MTc1NjEyODUwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
